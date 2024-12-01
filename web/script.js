@@ -128,7 +128,7 @@ const handleOutgoingChat = () => {
     isResponseGenerating = true;
 
     const html = ` <div class="message-content">
-           <img src="../imges/Gemini logo.webp" alt="" class="avatar">
+           <img src="../imges/question image.png" alt="" class="avatar">
            <p class="text"></p>
       </div> `;
 
