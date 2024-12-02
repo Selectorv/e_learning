@@ -30,10 +30,11 @@ body{
 }
  .social-icons  ul  {
    list-style-type: none;
-   background: #4285f4;
+   background: #c2c3c4;
    display: flex;
   flex-direction: column;
   padding: 20px;
+  margin-bottom: 1rem;
     
 }
 .social-icons ul li .fa-brands{
@@ -102,7 +103,7 @@ body.hide-header .header{
     color: var(--subheading-color);
 }
 .suggestion-list{
-    margin-top:  12vh;
+    margin-top:  8vh;
     list-style: none;
     display: flex;
     gap: 1.25rem;
@@ -238,11 +239,11 @@ body.hide-header .header{
  .typing-area{
     position: fixed;
     width: 100%;
-    bottom: 5px;
+    bottom: 0;
     padding: 1rem;
     background: -o-repeating-linear-gradient();
     margin: 20px;
-    z-index: 1;
+    
  }
 
  .typing-area :where(.typing-form, .action-buttons){
