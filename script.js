@@ -44,6 +44,7 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
   let currentWordIndex = 0;
 
   const typingInterval = setInterval(() => {
+  //Append each word to the text element with space
     textElement.innerText += (currentWordIndex === 0 ? '' : ' ') + words[currentWordIndex++];
     incomingMessageDiv.querySelector(".icon").chatList.add("hide");
 
@@ -53,19 +54,19 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
       isResponseGenerating = false;
       incomingMessageDiv.querySelector(".icon").chatList.remove("hide");
       localStorage.setItem("savedChats", chatList.innerHTML); //save chats to local storage
-      chatList.scrollTo(0, chatList.scrollHeight); // scroll to the bottom
     }
-  }, 75);
+      chatList.scrollTo(0, chatList.scrollHeight); // scroll to the bottom 
+  }, 75,);
 }
 
 //fetch responses from the api based on user message
-
 const generateAPIResponse = async (incomingMessageDiv) => { 
-  const textElement =  incomingMessageDiv.querySelector(".text");
+  const textElement =  incomingMessageDiv.querySelector(".text");//Get text element
   
   
 
    try {
+    //send a post request to the API with the users message
      const response = await fetch(API_URL, {
        method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -111,13 +112,14 @@ chatList.appendChild(incomingMessageDiv);
 
 chatList.scrollTo(0, chatList.scrollHeight); // scroll to the bottom
 generateAPIResponse(incomingMessageDiv);
-
 }
+
+//copy message text to the clipboard
 const copyMessage = (copyIcon) => {
   const messageText = copyIcon.parentElement.querySelector(".text").innerText;
   navigator.clipboard.writeText(messageText);
   copyIcon.innerText = "done";
-  setTimeout(() => copyIcon.innerText = "content_copy", 1000)
+  setTimeout(() => copyIcon.innerText = "content_copy", 1000);
 }
 
 //handle sending outgoing chat message
@@ -149,14 +151,14 @@ suggestion.forEach( suggestion => {
      userMesssage = suggestion.querySelector(".text").innerText;
      handleOutgoingChat();
   });
-})
+});
 
 //toggle light and dark themes
 toggleThemeButton.addEventListener("click", () => {
   const isLightMode = document.body.classList.toggle("light_mode");
   localStorage.setItem("themeColor", isLightMode ? "light_mode" : "dark_mode");
   toggleThemeButton.innerText = isLightMode ? "dark_mode" : "light_mode";
-})
+});
 
 //delete all chats from local storage when button is clicked
 deleteChatButton.addEventListener("click", () => {
@@ -164,11 +166,12 @@ deleteChatButton.addEventListener("click", () => {
     localStorage.removeItem("savedChats");
     loadLocalStorageData();
   }
-})
+});
 
 //prevent default form submission and handle outgoing chat
 typingForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     handleOutgoingChat();
-})
+});
+

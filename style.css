@@ -26,13 +26,41 @@
 
 body{
     background:var(--primary-color) ;
+    
 }
+ .social-icons  ul  {
+   list-style-type: none;
+   background: #c2c3c4;
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+    
+}
+.social-icons ul li {
+   gap: 10rem;
+   justify-content: space-between;
+   padding: 10px;
+   
+}
+.social-icons  i{
+   padding: 10px;
+   
+}
+.social-icons ul li  a{
+   text-decoration: none;
+   color: #000;
+   gap: 20rem;
+}
+
+
 .header, .typing-area{
     color: var(--text-color);
     
+    
 }
 .header{
-    margin-top: 7vh;
+    margin-top: 20vh;
     padding: 1rem;
    
 }
@@ -50,8 +78,9 @@ body.hide-header .header{
 }
 
 .header button{
+   
    float: right;
-   padding: 5px 8px;
+   padding: 5px 20px;
    border: none;
    border-radius: 5px;
    background-color: #4285f4; 
@@ -75,7 +104,7 @@ body.hide-header .header{
     font-size: 2.7rem;
     width: fit-content;
     background-clip: text;
-    background:  linear-gradient(to right, #010b1a,  #575656, #010b1a);
+    background:  linear-gradient(to right, #4285f4,  #ecebeb, #4285f4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -84,17 +113,19 @@ body.hide-header .header{
     color: var(--subheading-color);
 }
 .suggestion-list{
-    margin-top:  9.5vh;
+    margin-top:  8vh;
     list-style: none;
     display: flex;
     gap: 1.25rem;
     overflow-x: auto;
     scrollbar-width: none;
+    
 }
 .suggestion-list .suggestion{
+   
     padding: 1.25rem;
     cursor: pointer;
-    width: 227px;
+    width: 230px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -107,6 +138,7 @@ body.hide-header .header{
     background-color: var(--secondary-hover-color);
 }
 .suggestion-list .suggestion .text{
+   font-size: 20px;
     font-weight: 400;
 }
  .suggestion-list .suggestion .icon{
@@ -221,6 +253,7 @@ body.hide-header .header{
     padding: 1rem;
     background: -o-repeating-linear-gradient();
     margin: 20px;
+    
  }
 
  .typing-area :where(.typing-form, .action-buttons){
@@ -242,7 +275,7 @@ body.hide-header .header{
     font-size: 1rem;
     color:  var(--text-color);
     border-radius: 6.2rem;
-    padding: 1.1rem 4rem 1.1rem 1.5rem;
+    padding: 1.5rem 9rem 1.5rem 1.9rem;
     background: var(--secondary-color);
  }
  .typing-area .typing-input:focus{
@@ -288,3 +321,36 @@ body.hide-header .header{
     color: var(--placeholder-color);
  }
 
+ @media ( max-width: 768px){
+   .header :is(.title, .subtitle){
+      font-size: 2rem;
+      line-height: 1.7rem;
+   }
+   .header .subtitle{
+      font-size: 1.7rem;
+   }
+   .chat-list .message .avatar{
+      width: 37px;
+      height: 37px;
+   }
+   
+ .typing-area :where(.typing-form, .actions-button){
+      gap: 0.4rem;
+ }
+
+ .typing-form .input-wrapper{
+   height: 50px;
+ }
+
+ .typing-form .typing-input{
+   padding: 1.1rem 3.5rem 1.1rem 1.2rem;
+ }
+ .typing-area .icon{
+   height: 50px;
+   width: 50px;
+ }
+ .typing-area .disclaimer-text{
+   font-size: 0.75rem;
+   margin: 0.5rem;
+ }
+}
