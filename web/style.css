@@ -33,7 +33,7 @@ body{
    background: #c2c3c4;
    display: flex;
   flex-direction: column;
-  padding: 20px;
+  justify-content: space-between;
   margin-bottom: 1rem;
     
 }
@@ -43,9 +43,14 @@ body{
    padding: 10px;
    
 }
-.social-icons ul li a{
+.social-icons  i{
+   padding: 10px;
+   
+}
+.social-icons ul li  a{
    text-decoration: none;
    color: #000;
+   gap: 20rem;
 }
 
 
@@ -316,3 +321,36 @@ body.hide-header .header{
     color: var(--placeholder-color);
  }
 
+ @media ( max-width: 768px){
+   .header :is(.title, .subtitle){
+      font-size: 2rem;
+      line-height: 1.7rem;
+   }
+   .header .subtitle{
+      font-size: 1.7rem;
+   }
+   .chat-list .message .avatar{
+      width: 37px;
+      height: 37px;
+   }
+   
+ .typing-area :where(.typing-form, .actions-button){
+      gap: 0.4rem;
+ }
+
+ .typing-form .input-wrapper{
+   height: 50px;
+ }
+
+ .typing-form .typing-input{
+   padding: 1.1rem 3.5rem 1.1rem 1.2rem;
+ }
+ .typing-area .icon{
+   height: 50px;
+   width: 50px;
+ }
+ .typing-area .disclaimer-text{
+   font-size: 0.75rem;
+   margin: 0.5rem;
+ }
+}
