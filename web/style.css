@@ -37,10 +37,15 @@ body{
   margin-bottom: 1rem;
     
 }
-.social-icons ul li .fa-brands{
+.social-icons ul li {
    gap: 10rem;
    justify-content: space-between;
+   padding: 10px;
    
+}
+.social-icons ul li a{
+   text-decoration: none;
+   color: #000;
 }
 
 
