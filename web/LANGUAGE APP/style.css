@@ -12,7 +12,8 @@ body{
 
 }
 .intro{
-    color: rgb(107, 107, 107);
+    background-color: aliceblue;
+    color: #072c69;
     text-align: center;
     margin: 20px;
     
@@ -100,7 +101,7 @@ body{
     color: #fff;
     font-size: 17px;
     border-radius: 5px;
-    background: rgb(107, 107, 107);
+    background: linear-gradient(to right,#072c69, #4285f4,red);
 }
 
 @media screen and (max-width: 560px){

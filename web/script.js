@@ -44,7 +44,7 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
   let currentWordIndex = 0;
 
   const typingInterval = setInterval(() => {
-    textElement.innerText += (currentWordIndex === 0 ? '' : ' ') + words[currentWordIndex++];
+    textElement.innerText += (currentWordIndex === 0 ? '' : '') + words[currentWordIndex++];
     incomingMessageDiv.querySelector(".icon").chatList.add("hide");
 
     //if all words arfe displayed
@@ -53,8 +53,8 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
       isResponseGenerating = false;
       incomingMessageDiv.querySelector(".icon").chatList.remove("hide");
       localStorage.setItem("savedChats", chatList.innerHTML); //save chats to local storage
-      chatList.scrollTo(0, chatList.scrollHeight); // scroll to the bottom
     }
+      chatList.scrollTo(0, chatList.scrollHeight); // scroll to the bottom 
   }, 75);
 }
 
@@ -117,7 +117,7 @@ const copyMessage = (copyIcon) => {
   const messageText = copyIcon.parentElement.querySelector(".text").innerText;
   navigator.clipboard.writeText(messageText);
   copyIcon.innerText = "done";
-  setTimeout(() => copyIcon.innerText = "content_copy", 1000)
+  setTimeout(() => copyIcon.innerText = "content_copy", 1000);
 }
 
 //handle sending outgoing chat message
@@ -172,3 +172,4 @@ typingForm.addEventListener("submit", (e) => {
 
     handleOutgoingChat();
 })
+
