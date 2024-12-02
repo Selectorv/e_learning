@@ -56,7 +56,7 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
       localStorage.setItem("savedChats", chatList.innerHTML); //save chats to local storage
     }
       chatList.scrollTo(0, chatList.scrollHeight); // scroll to the bottom 
-  }, 75 * index);
+  }, 75,);
 }
 
 //fetch responses from the api based on user message
